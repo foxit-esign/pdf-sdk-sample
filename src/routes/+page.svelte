@@ -57,7 +57,8 @@
                 libPath: './foxit-pdf-sdk-lib/',
                 jr: {
                     readyWorker: readyWorker
-                }
+                },
+                defaultScale:"fitHeight"
             },
             renderTo: '#pdf-ui',
             appearance: UIExtension.appearances.adaptive,
@@ -94,9 +95,9 @@
 
         pdfui.openPDFByHttpRangeRequest({
             range:{
-                url:'/FoxitPDFSDKforWeb_DemoGuide.pdf',
+                url:'/Foxit_Example_Invoice.pdf',
             }
-        },{fileName:'FoxitPDFSDKforWeb_DemoGuide.pdf'})
+        },{fileName:'Foxit_Example_Invoice.pdf'})
 
     }
 
