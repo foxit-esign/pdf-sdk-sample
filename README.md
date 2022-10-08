@@ -1,24 +1,19 @@
-# create-svelte
+# pdf-sdk-sample
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Securely Edit and Send PDFs for Signature by leveraging both the Foxit PDF SDK and Foxit's own eSign API.
 
-## Creating a project
+<img width="707" alt="Application Screenshot" src="https://user-images.githubusercontent.com/93008420/194686132-a42f09db-a258-480d-9933-eb4ac108efc1.png">
 
-If you're seeing this, you've probably already done this step. Congrats!
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+By using this app, you will be able to quickly upload pdfs and use any features available in the Foxit eSign SDK before sending a document for signature.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
 
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-```bash
+
+
 npm run dev
 
 # or start the server and open the app in a new browser tab
