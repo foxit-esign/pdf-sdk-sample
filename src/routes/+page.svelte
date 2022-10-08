@@ -67,7 +67,7 @@
             // you can add a css-class 'fv__ui-toolbar-show-text-button'  to make the text appear  
             fragments: [{
                 target: 'hand-tool',
-                template: '<xbutton class="fv__ui-toolbar-show-text-button" name="cus-button">New button in front of hand-tool</xbutton>',
+                template: '<div style="display: flex;"><img src="https://www.foxit.com/static/company/images/icons/foxit-esign-logo-500x500.png" style="width: 2rem; height: 2rem; margin-top: 4px; margin-bottom: 4px;"><xbutton class="fv__ui-toolbar-show-text-button" style="padding-left: 0px;" name="cus-button">Send via Foxit eSign</xbutton></div>',
                 action: FRAGMENT_ACTION.BEFORE,
                 config: [{
                     target: 'cus-button',
@@ -75,14 +75,28 @@
                         printSomething();
                     }
                 }]
-            },
-            {
-                target: 'protect-tab-group-sign',
-                action: FRAGMENT_ACTION.EXT,
-                config: {
-                    visible: false // Set to false to hide the snapshot button
-                }
-            }]
+                },
+                {
+                    target: 'protect-tab-group-sign',
+                    action: FRAGMENT_ACTION.EXT,
+                    config: {
+                        visible: false // Set to false to hide the snapshot button
+                    }
+            }],
+            addons: [
+            '/foxit-pdf-sdk-lib/uix-addons/file-property',
+            '/foxit-pdf-sdk-lib/uix-addons/multi-media',
+            '/foxit-pdf-sdk-lib/uix-addons/path-objects',
+            '/foxit-pdf-sdk-lib/uix-addons/print',
+            '/foxit-pdf-sdk-lib/uix-addons/full-screen',
+            '/foxit-pdf-sdk-lib/uix-addons/import-form',
+            '/foxit-pdf-sdk-lib/uix-addons/export-form',
+            '/foxit-pdf-sdk-lib/uix-addons/undo-redo',
+            '/foxit-pdf-sdk-lib/uix-addons/thumbnail',
+            '/foxit-pdf-sdk-lib/uix-addons/search',
+            '/foxit-pdf-sdk-lib/uix-addons/read-aloud',
+        ].concat(UIExtension.PDFViewCtrl.DeviceInfo.isMobile ? [] : '/foxit-pdf-sdk-lib/uix-addons/text-object')
+                
         });
         
         pdfui.addUIEventListener('fullscreenchange', function(isFullscreen) {
