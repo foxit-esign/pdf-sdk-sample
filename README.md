@@ -40,4 +40,4 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> This app is powered by and deployed in [Vercel]([https://kit.svelte.dev/docs/adapters](https://vercel.com/foxit-esign), and can be deployed in similar platforms as well :).
+> This app is powered by and deployed in [Vercel](https://vercel.com), and can be deployed in similar platforms as well :).
