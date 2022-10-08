@@ -1,4 +1,6 @@
-# pdf-sdk-sample
+# Foxit Web SDK + Foxit eSign
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ffoxit-esign%2Fpdf-sdk-sample&env=PRIVATE_FOXIT_ESIGN_ACCESS_TOKEN&demo-title=Foxit%20PDF%20SDK%20%2B%20Foxit%20eSign&demo-description=Securely%20Edit%20and%20Send%20PDFs%20for%20Signature%20by%20leveraging%20both%20the%20Foxit%20PDF%20SDK%20and%20Foxit's%20own%20eSign%20API.&demo-url=pdf-sdk-sample.vercel.app&demo-image=https%3A%2F%2Fuser-images.githubusercontent.com%2F93008420%2F194686132-a42f09db-a258-480d-9933-eb4ac108efc1.png)
 
 Securely Edit and Send PDFs for Signature by leveraging both the Foxit PDF SDK and Foxit's own eSign API.
 
