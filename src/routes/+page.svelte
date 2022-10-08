@@ -39,13 +39,25 @@
         reader.onerror = error => reject(error);
     });
 
-    async function printSomething() {
-        console.log(pdfui);
-        console.log(pdfui.pdfViewer.getAllActivatedElements());
-        // retrieving base64file
-        // var file = await pdfui.pdfViewer.currentPDFDoc.getFile();
-        
-        // console.log(await toBase64(file));
+    async function sendViaFoxiteSign() {
+        // 1. retrieve the  base64file
+        var file = await pdfui.pdfViewer.currentPDFDoc.getFile();
+
+        // 2. retrieve embedded session via foxit esign api
+        let foxiteSignFormData = new FormData();
+        foxiteSignFormData.append("base64File", await toBase64(file));
+
+        const response = await fetch('/', {
+            method: 'POST',
+            body: foxiteSignFormData
+        });
+
+        const { data } = await response.json();
+
+        // 3. open the embedded signing session in this same window
+        if(!data.sessionUrl !== "") {
+            window.open(data.sessionUrl, "_self");
+        }
     }
 
     function loadFoxitSdkElements() {
@@ -67,12 +79,12 @@
             // you can add a css-class 'fv__ui-toolbar-show-text-button'  to make the text appear  
             fragments: [{
                 target: 'hand-tool',
-                template: '<div style="display: flex;"><img src="https://www.foxit.com/static/company/images/icons/foxit-esign-logo-500x500.png" style="width: 2rem; height: 2rem; margin-top: 4px; margin-bottom: 4px;"><xbutton class="fv__ui-toolbar-show-text-button" style="padding-left: 0px;" name="cus-button">Send via Foxit eSign</xbutton></div>',
+                template: '<div style="display: flex;"><button class="fv__ui-toolbar-show-text-button fv__ui-button" name="cus-button"><img src="https://www.foxit.com/static/company/images/icons/foxit-esign-logo-500x500.png" style="width: 2rem; height: 2rem; margin-top: 4px; margin-bottom: 4px; margin-left: 4px; margin-right: 4px;">Send via Foxit eSign</button></div>',
                 action: FRAGMENT_ACTION.BEFORE,
                 config: [{
                     target: 'cus-button',
                     callback: function() {
-                        printSomething();
+                        sendViaFoxiteSign();
                     }
                 }]
                 },
