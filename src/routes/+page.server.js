@@ -21,7 +21,6 @@ export const actions = {
             "sendNow": false,
             "processTextTags": true, 
             "processAcroFields":true, 
-            "sendSuccessUrl": "'+'https://google.com'+'?top=true", 
             "enableStepByStep":true,
             "hideMoreAction":true
         };
