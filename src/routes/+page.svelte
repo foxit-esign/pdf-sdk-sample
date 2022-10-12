@@ -110,7 +110,8 @@
             '/foxit-pdf-sdk-lib/uix-addons/recognition-form',
             '/foxit-pdf-sdk-lib/uix-addons/edit-graphics',
             '/foxit-pdf-sdk-lib/uix-addons/form-designer',
-            '/foxit-pdf-sdk-lib/uix-addons/text-object'
+            '/foxit-pdf-sdk-lib/uix-addons/text-object',
+            '/foxit-pdf-sdk-lib/uix-addons/rotate-pages'
         ].concat(UIExtension.PDFViewCtrl.DeviceInfo.isMobile ? [] : '/foxit-pdf-sdk-lib/uix-addons/text-object')
                 
         });
