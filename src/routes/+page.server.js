@@ -1,4 +1,4 @@
-import { PRIVATE_FOXIT_ESIGN_ACCESS_TOKEN } from '$env/static/private'
+import { PUBLIC_FOXIT_ESIGN_ACCESS_TOKEN } from '$env/static/public'
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -29,7 +29,7 @@ export const actions = {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${PRIVATE_FOXIT_ESIGN_ACCESS_TOKEN}`
+              'Authorization': `Bearer ${PUBLIC_FOXIT_ESIGN_ACCESS_TOKEN}`
             },
             redirect: "follow",
             body: JSON.stringify(requestPayload)
